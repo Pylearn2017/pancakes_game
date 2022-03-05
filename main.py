@@ -70,6 +70,6 @@ pancake.color('orange')
 pancake.shapesize(30)
 
 
-
+print('Это новое ')
 
 turtle.done()
