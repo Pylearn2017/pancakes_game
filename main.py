@@ -1,6 +1,17 @@
 import turtle
 import random
 
+def cream_add():
+	pancake.color('white')
+	pancake.shapesize(15)
+	pancake.stamp()
+
+
+def jam_add():
+	pancake.color('red')
+	pancake.shapesize(15)
+	pancake.stamp()
+
 
 def iscollision(obj1, obj2, w1, w2, h1, h2):
 	if obj1.xcor() + w1 > obj2.xcor() - w2 and obj1.xcor() - w1 < obj2.xcor() + w2:
@@ -16,7 +27,7 @@ def click(x, y):
 			hero.width, 
 			ingredient.height,
 			hero.height):
-			print('Попадание')
+			ingredient.add()
 
 font = ('Arial', 36, 'normal')
 order_list = [
@@ -66,6 +77,7 @@ jam.penup()
 jam.setposition(-150, -300)
 jam.height = 50
 jam.width = 50
+jam.add = jam_add
 
 cream = turtle.Turtle()
 cream.shape('cream.gif')
@@ -73,6 +85,7 @@ cream.penup()
 cream.setposition(0, -300)
 cream.height = 50
 cream.width = 50
+cream.add = cream_add
 
 caviar = turtle.Turtle()
 caviar.shape('caviar.gif')
@@ -92,6 +105,7 @@ pancake = turtle.Turtle()
 pancake.shape('circle')
 pancake.color('orange')
 pancake.shapesize(25)
+pancake.stamp()
 
 ingredients = [sugar, jam, cream, caviar, banana]
 window.onclick(click)
