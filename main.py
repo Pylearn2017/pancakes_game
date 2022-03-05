@@ -1,6 +1,23 @@
 import turtle
 import random
 
+
+def iscollision(obj1, obj2, w1, w2, h1, h2):
+	if obj1.xcor() + w1 > obj2.xcor() - w2 and obj1.xcor() - w1 < obj2.xcor() + w2:
+		if obj1.ycor() + h1 > obj2.ycor() - h2 and obj1.ycor() - h1 < obj2.ycor() + h2:
+			return True
+	return False
+
+def click(x, y):
+	hero.setposition(x,y)
+	for ingredient in ingredients:
+		if iscollision(ingredient, hero, 
+			ingredient.width, 
+			hero.width, 
+			ingredient.height,
+			hero.height):
+			print('Попадание')
+
 font = ('Arial', 36, 'normal')
 order_list = [
 	'Блин с сахаром',
@@ -16,6 +33,13 @@ window.register_shape('caviar.gif')
 window.register_shape('cream.gif')
 window.register_shape('jam.gif')
 window.register_shape('sugar.gif')
+
+hero = turtle.Turtle()
+hero.penup()
+hero.hideturtle()
+hero.speed(0)
+hero.height = 10
+hero.width = 10
 
 order = turtle.Turtle()
 order.penup()
@@ -33,43 +57,43 @@ sugar = turtle.Turtle()
 sugar.shape('sugar.gif')
 sugar.penup()
 sugar.setposition(-300, -300)
-sugar.height = 100
-sugar.width = 100
+sugar.height = 50
+sugar.width = 50
 
 jam = turtle.Turtle()
 jam.shape('jam.gif')
 jam.penup()
 jam.setposition(-150, -300)
-jam.height = 100
-jam.width = 100
+jam.height = 50
+jam.width = 50
 
 cream = turtle.Turtle()
 cream.shape('cream.gif')
 cream.penup()
 cream.setposition(0, -300)
-cream.height = 100
-cream.width = 100
+cream.height = 50
+cream.width = 50
 
 caviar = turtle.Turtle()
 caviar.shape('caviar.gif')
 caviar.penup()
 caviar.setposition(150, -300)
-caviar.height = 100
-caviar.width = 100
+caviar.height = 50
+caviar.width = 50
 
 banana = turtle.Turtle()
 banana.shape('banana.gif')
 banana.penup()
 banana.setposition(300, -300)
-banana.height = 100
-banana.width = 100
+banana.height = 50
+banana.width = 50
 
 pancake = turtle.Turtle()
 pancake.shape('circle')
 pancake.color('orange')
-pancake.shapesize(30)
+pancake.shapesize(25)
 
-
-print('Это новое ')
+ingredients = [sugar, jam, cream, caviar, banana]
+window.onclick(click)
 
 turtle.done()
