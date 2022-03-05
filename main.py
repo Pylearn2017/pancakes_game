@@ -39,28 +39,28 @@ sugar.width = 100
 jam = turtle.Turtle()
 jam.shape('jam.gif')
 jam.penup()
-jam.setposition(-300, -300)
+jam.setposition(-150, -300)
 jam.height = 100
 jam.width = 100
 
 cream = turtle.Turtle()
 cream.shape('cream.gif')
 cream.penup()
-cream.setposition(-300, -300)
+cream.setposition(0, -300)
 cream.height = 100
 cream.width = 100
 
 caviar = turtle.Turtle()
 caviar.shape('caviar.gif')
 caviar.penup()
-caviar.setposition(-300, -300)
+caviar.setposition(150, -300)
 caviar.height = 100
 caviar.width = 100
 
 banana = turtle.Turtle()
 banana.shape('banana.gif')
 banana.penup()
-banana.setposition(-300, -300)
+banana.setposition(300, -300)
 banana.height = 100
 banana.width = 100
 
